@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>on10</title>
+	<STYLE>
+		.me{
+			text-align:justify;
+			
+		}
+		#ELE{
+			color:orange;
+		}
+	</STYLE>
+	</head>
+
+	<body style="background-color:rgb(255, 255, 179);">
+		<!--p title="title of paragraph">paragraph body</p-->
+
+
+		<form autocomplete=on>
+			<fieldset>
+			<LEGEND ><B><i>STUDENT FORM</i></B></LEGEND>
+			<h2>STUDENT DETAILS:</H2><BR>
+			<label for="name" ID="ELE"><B>NAME</B></label>(enter your name)
+			<input type="text" name="name"><br><br><br>
+			<label for="register number" ID="ELE"><b>REG.NO</b></label>(enter your reg.no)
+			<input type="text" name="register number"><br><br><BR>
+			<label for="mobile number" ID="ELE"><b>MOBILE NUMBER</b></label>(enter your number)
+			<input type="number" name="mobile number"><br><br><br>
+			<label for="date of birth" ID="ELE"><b>DATE OF BIRTH</b></label>(enter your DOB)
+			<input type="date" name="date of birth"><br><br><br>
+			<label for"gender" id="ELE"><b>GENDER:</b></label>
+			<input type="radio" name="gender" id="male">  <label for="gender" name="male"><b>MALE</b></label>
+			<input type="radio" name="gender" id="female">  <label for="gender" name="male"><b>FEMALE</b></label><br><br><br>
+			<label for="residence" id="ELE"><b>ENTER YOUR STATE</b></label>
+			<select name="residence">
+				<option value="arunachal pradesh">ARUNACHAL PRADESH</option>
+				<option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+				<option value="ASSAM">ASSAM</option>
+				<option value="GUJARAT">GUJARAT</option>
+				<option value="KERELA">KERELA</option>
+				<option value="GOA">GOA</option>
+				<option value="MADHYA PRADESH">MADHYA PRADESH</option>
+				<option value="TAMIL NADU">TAMIL NADU</option>
+			</select><br><br>
+			<H2>PARENT/GUARDIAN DETAILS:</H2><BR>
+			<label for="father name" id="ELE"><b>FATHER'S NAME</b></LABEL>(enter father's name)
+			<input name="father's name" type="text"><br><br>
+			<label type="occ" id="ELE"><b>FATHER'S OCCUPATION</b></label>
+			<input type="text" name="occ"><br><br>
+			
+			<input type="submit" value="Submit" style="color:white;background-color:rgb(26, 255, 102);"><br><br>
+			</fieldset>
+		</form>
+	</body>
+</html>
