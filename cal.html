@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            function dis(val){
+                
+                document.getElementById("result").value+=val;
+            }
+            function clr(){
+                document.getElementById("result").value=null;
+                document.getElementById("result").style.color="whitesmoke";
+            }
+            /* function key(KeyboardEvent){
+                document.value+=KeyboardEvent
+            } */
+            function res(){
+                try{
+                let exp=document.getElementById("result").value;
+                let re=eval(exp);
+                if(typeof(re)!='number'){
+                    throw "error";
+                }
+                /* document.getElementById("result").value+=" = "+re; */
+                document.getElementById("res1").innerHTML=re;
+                }
+                catch(err){
+                    document.getElementById("result").style.color="red";
+                    document.getElementById("result").value="Syntax Error";
+                    /* document.getElementById("res1").innerHTML= */
+                }
+                
+            }
+            function back(){
+                let exp=document.getElementById("result").value;
+                document.getElementById("result").value=exp.slice(0,exp.length-1);
+            }
+            function mode(){
+                if (document.body.style.background=='white'){
+                    document.body.style.background= '#4e4e4f';
+                    document.getElementById('h1').style.color='white';
+                }
+                else{
+                document.body.style.background='white';
+                document.getElementById('h1').style.color='black';
+                }
+            }
+            function shift(){
+                document.getElementsByClassName('inv').style.display= 'block';
+                // document.getElementById("sci").style.display='block';
+                
+            }
+        </script>
+        <title>project Ca</title>
+        
+    </head>
+
+    <style>
+        *{
+            font-size: 40px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body{
+            background-image: linear-gradient(to right , #4e4e4f, #585859, #626263, #6c6c6d, #767677);
+        }
+        fieldset{
+            
+           /*  margin-top: 200px; */
+           border-radius:500px;
+           width: 500px;
+           height: 500px;
+           top: 2000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            
+        }
+        .butt{
+            width: 80px;
+            height: 80px;
+            background-image: linear-gradient(to right top, #1e1e1f, #1e1e20, #1e1e21, #1e1e21, #1e1e22);
+           /* box-shadow: 2px 2px rgb(114, 218, 250);*/
+            color: white;
+        }
+        .butt:hover{
+            
+            background: rgba(255, 166, 0);
+        }
+        
+        input{
+            /* margin-right: 20px;
+            padding: 10px;*/
+            background-color: rgb(81, 74, 74);       
+            color: whitesmoke;
+            /* background-image: linear-gradient(to right top, #4e4e4f, #585859, #626263, #6c6c6d, #767677); */
+            margin: auto;
+            display: block;
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+        }
+        input:hover{
+
+            box-shadow: 10px 10px 50px 20px gold;
+            transition:0.5s;
+        }
+        th,td{
+            border-color: 0px solid black;
+            font-size:50px;
+            padding: 6px;
+        } 
+        table{
+            margin-top: 20px;
+            margin-left:280px;
+            margin-right: 280px ;
+            margin-bottom: 100px;   
+        }
+        fieldset:hover{
+            box-shadow: 10px 10px 100px 20px gold;
+            transition: 0.9s;
+        }
+        fieldset:not(:hover),input:not(:hover){
+            transition: 0.9s;
+        }
+        #res1{
+            text-align: center;
+            padding:40px;
+            /* margin-left: 1000px;
+            margin-right: 1000px; */
+            display: flex;
+            justify-content: center;
+            background-image: linear-gradient(to right top, #1e1e1f, #1e1e20, #1e1e21, #1e1e21, #1e1e22);
+            color: rgb(6, 255, 6);
+            margin: auto; 
+            width: 400px;
+            border:2px solid white;
+        }
+        #mode{
+            float: right;
+        }
+        .inv{
+            display: none;
+        }
+     /* table,th,td{
+            border: 2px solid black;
+    }*/
+
+            
+        
+</style>
+
+    
+        <button id="mode" onclick="mode()" style="margin-left: 100px;">Mode</button>
+        <br>
+        <h1 id="h1" style="text-align: center;color: black;font-weight: bolder;font-size: xxx-large;">CALCULATOR</h1>
+        <div id="bod">
+        <input type="text" id="result" style="margin-top: 100px;text-align: center;">
+        <br>
+        <h2 id="res1"></h2>
+        <br>
+        <fieldset>
+        <br>
+        <button onclick="document.getElementsByClassName('inv').style.display= 'block';">change</button>
+        <!-- <div id='norm'>
+        <table>
+            <tr>
+                
+                    <td><input type="button" class="butt" value="1" onclick="dis('1')"></td>
+                    <td><input type="button" class="butt" value="2" onclick="dis('2')"></td>
+                    <td><input type="button" class="butt" value="3" onclick="dis('3')"></td>
+                    <td><input type="button" class="butt" value="+" onclick="dis('+')"></td>
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" class="butt" value="4" onclick="dis('4')"></td>
+                    <td><input type="button" class="butt" value="5" onclick="dis('5')"></td>
+                    <td><input type="button" class="butt" value="6" onclick="dis('6')"></td>
+                    <td><input type="button" class="butt" value="-" onclick="dis('-')"></td>
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" class="butt" value="7" onclick="dis('7')"></td>
+                    <td><input type="button" class="butt" value="8" onclick="dis('8')"></td>
+                    <td><input type="button" class="butt" value="9" onclick="dis('9')"></td>
+                    <td><input type="button" class="butt" value="*" onclick="dis('*')"></td>
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" class="butt" value="=" onclick="res()" ></td>
+                    <td><input type="button" class="butt" value="0" onclick="dis('0')"></td>
+                    <td><input type="button" class="butt" value="c" onclick="clr()"></td>
+                    <td><input type="button" class="butt" value="<" onclick="back()"></td>
+            </tr>
+    </table>
+</div> -->
+
+    <div id='sci'>
+
+        <table>
+            <tr>
+                
+                    <td><input type="button" class="butt" value="1" onclick="dis('1')"></td>
+                    <td><input type="button" class="butt" value="2" onclick="dis('2')"></td>
+                    <td><input type="button" class="butt" value="3" onclick="dis('3')"></td>
+                    <td class="inv"><input type='button' class="butt" value=")" onclick="dis(')')"></td>
+                    <td><input type="button" class="butt" value="+" onclick="dis('+')"></td>
+            </tr>
+
+            <tr>
+                    <td><input type="button" class="butt" value="4" onclick="dis('4')"></td>
+                    <td><input type="button" class="butt" value="5" onclick="dis('5')"></td>
+                    <td><input type="button" class="butt" value="6" onclick="dis('6')"></td>
+                    <td class="inv"><input type='button' class="butt" value="(" onclick="dis('(')"></td>
+                    <td><input type="button" class="butt" value="-" onclick="dis('-')"></td>
+            </tr>
+
+            <tr>
+                    <td><input type="button" class="butt" value="7" onclick="dis('7')"></td>
+                    <td><input type="button" class="butt" value="8" onclick="dis('8')"></td>
+                    <td><input type="button" class="butt" value="9" onclick="dis('9')"></td>
+                    <td class="inv"><input type='button' class="butt" value="." onclick="dis('.')"></td>
+                    <td><input type="button" class="butt" value="*" onclick="dis('*')"></td>
+                    
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" class="butt" value="=" onclick="res()" ></td>
+                    <td><input type="button" class="butt" value="0" onclick="dis('0')"></td>
+                    <td class="inv"><input type='button' class="butt" value="^" onclick="dis('**')"></td>
+                    <td><input type="button" class="butt" value="c" onclick="clr()"></td>
+                    <td><input type="button" class="butt" value="<" onclick="back()"></td>
+            </tr>
+    </table>
+
+    </div>
+
+</fieldset>
+</div>
+
+</body>
+
+</html>
